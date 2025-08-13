@@ -1,0 +1,1031 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nova Imperator - Privacy Policy & SOP</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            animation: slideDown 0.8s ease-out;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .logo {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            color: white;
+            font-weight: bold;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+            animation: pulse 2s infinite;
+        }
+
+        .company-name {
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: #666;
+            margin-top: 10px;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .nav-btn {
+            padding: 12px 24px;
+            background: rgba(255, 255, 255, 0.9);
+            border: 2px solid transparent;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-btn:hover {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+        }
+
+        .nav-btn.active {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .content-section {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            animation: fadeInUp 0.8s ease-out;
+            display: none;
+        }
+
+        .content-section.active {
+            display: block;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #333;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .section-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 20px;
+        }
+
+        .subsection {
+            margin-bottom: 30px;
+            padding: 25px;
+            background: linear-gradient(135deg, #f8f9ff 0%, #f0f2ff 100%);
+            border-radius: 15px;
+            border-left: 4px solid #667eea;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .subsection:hover {
+            transform: translateX(5px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.1);
+        }
+
+        .subsection h3 {
+            color: #667eea;
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .subsection-icon {
+            width: 24px;
+            height: 24px;
+            background: #667eea;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 12px;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            margin: 20px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .highlight-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            animation: shine 3s infinite;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .contact-card {
+            background: linear-gradient(135deg, #f8f9ff 0%, #f0f2ff 100%);
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .contact-card:hover {
+            border-color: #667eea;
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(102, 126, 234, 0.2);
+        }
+
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            font-size: 24px;
+            color: white;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .data-table th,
+        .data-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        .data-table th {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            font-weight: 600;
+        }
+
+        .data-table tr:hover {
+            background-color: #f8f9ff;
+        }
+
+        .toggle-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .toggle-content.expanded {
+            max-height: 1000px;
+        }
+
+        .expand-btn {
+            background: none;
+            border: none;
+            color: #667eea;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .expand-btn:hover {
+            color: #764ba2;
+            transform: translateX(5px);
+        }
+
+        .floating-particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            animation: float 15s infinite linear;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            margin-top: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .update-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #00c851 0%, #007e33 100%);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-left: 10px;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        @keyframes shine {
+            0% {
+                left: -100%;
+            }
+            100% {
+                left: 100%;
+            }
+        }
+
+        @keyframes float {
+            from {
+                transform: translateY(100vh) translateX(0);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            to {
+                transform: translateY(-100px) translateX(100px);
+                opacity: 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            .header {
+                padding: 20px;
+            }
+            
+            .logo-section {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .company-name {
+                font-size: 2rem;
+            }
+            
+            .content-section {
+                padding: 25px;
+            }
+            
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="floating-particles" id="particles"></div>
+
+    <div class="container">
+        <header class="header">
+            <div class="logo-section">
+<div class="logo">
+    <img src="https://elwiki.net/wiki/images/thumb/d/de/Nova_Imperator_Chibi.png/150px-Nova_Imperator_Chibi.png" 
+         alt="Nova Imperator Logo" 
+         style="height: 80px;">
+</div>
+                <div>
+                    <h1 class="company-name">Nova Imperator</h1>
+                    <p class="subtitle">Digital Calculator</p>
+                </div>
+            </div>
+            <div class="nav-buttons">
+                <button class="nav-btn active" onclick="showSection('privacy')">🔒 Privacy Policy</button>
+                <button class="nav-btn" onclick="showSection('sop')">📋 Standard Operating Procedures</button>
+                <button class="nav-btn" onclick="showSection('contact')">📞 Contact Us</button>
+                <button class="nav-btn" onclick="showSection('about')">ℹ️ About</button>
+            </div>
+        </header>
+
+        <!-- Privacy Policy Section -->
+        <section id="privacy" class="content-section active">
+            <h2 class="section-title">
+                <div class="section-icon">🔒</div>
+                Privacy Policy
+                <span class="update-badge">Updated August 2025</span>
+            </h2>
+
+            <div class="highlight-box">
+                <h3>🛡️ Your Privacy is Our Priority</h3>
+                <p>At Nova Imperator, we are committed to protecting your privacy and ensuring the security of your personal information. This policy explains how we collect, use, and protect your data when you use our Digital Calculator app.</p>
+            </div>
+
+            <div class="subsection" onclick="toggleContent(this)">
+                <h3><div class="subsection-icon">📊</div>Information We Collect</h3>
+                <div class="toggle-content">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Data Type</th>
+                                <th>Purpose</th>
+                                <th>Storage Duration</th>
+                                <th>Sharing</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Device Information</td>
+                                <td>App optimization & compatibility</td>
+                                <td>30 days</td>
+                                <td>No</td>
+                            </tr>
+                            <tr>
+                                <td>Usage Analytics</td>
+                                <td>Feature improvement</td>
+                                <td>90 days</td>
+                                <td>Anonymized only</td>
+                            </tr>
+                            <tr>
+                                <td>Calculation History</td>
+                                <td>User convenience</td>
+                                <td>Local storage only</td>
+                                <td>No</td>
+                            </tr>
+                            <tr>
+                                <td>App Preferences</td>
+                                <td>Personalized experience</td>
+                                <td>Until app deletion</td>
+                                <td>No</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <button class="expand-btn">Click to expand details →</button>
+            </div>
+
+            <div class="subsection" onclick="toggleContent(this)">
+                <h3><div class="subsection-icon">🎯</div>How We Use Your Information</h3>
+                <div class="toggle-content">
+                    <ul style="margin-left: 20px;">
+                        <li><strong>App Functionality:</strong> To provide basic, scientific, and unit conversion calculations</li>
+                        <li><strong>Performance Optimization:</strong> To improve app speed and reliability</li>
+                        <li><strong>Bug Detection:</strong> To identify and fix technical issues</li>
+                        <li><strong>Feature Development:</strong> To understand which features are most valuable</li>
+                        <li><strong>Security:</strong> To protect against fraudulent or unauthorized use</li>
+                        <li><strong>Support:</strong> To respond to your inquiries and provide assistance</li>
+                    </ul>
+                </div>
+                <button class="expand-btn">Click to expand details →</button>
+            </div>
+
+            <div class="subsection" onclick="toggleContent(this)">
+                <h3><div class="subsection-icon">🔐</div>Data Security & Storage</h3>
+                <div class="toggle-content">
+                    <p><strong>Encryption:</strong> All data transmissions are encrypted using AES-256 encryption standards.</p>
+                    <p><strong>Local Storage:</strong> Calculation history and preferences are stored locally on your device and never transmitted to our servers.</p>
+                    <p><strong>Server Security:</strong> Our servers are protected by enterprise-grade security measures including firewalls, intrusion detection, and regular security audits.</p>
+                    <p><strong>Access Control:</strong> Only authorized personnel have access to any anonymized analytics data, and all access is logged and monitored.</p>
+                    <p><strong>Data Backup:</strong> We maintain secure backups with the same level of protection as our primary systems.</p>
+                </div>
+                <button class="expand-btn">Click to expand details →</button>
+            </div>
+
+            <div class="subsection" onclick="toggleContent(this)">
+                <h3><div class="subsection-icon">⚖️</div>Your Rights & Choices</h3>
+                <div class="toggle-content">
+                    <p><strong>Access:</strong> You can request information about what personal data we have collected about you.</p>
+                    <p><strong>Correction:</strong> You can request correction of any inaccurate personal data.</p>
+                    <p><strong>Deletion:</strong> You can request deletion of your personal data (subject to legal requirements).</p>
+                    <p><strong>Portability:</strong> You can request a copy of your data in a machine-readable format.</p>
+                    <p><strong>Opt-out:</strong> You can opt-out of analytics collection in the app settings.</p>
+                    <p><strong>Withdraw Consent:</strong> You can withdraw consent for data processing at any time.</p>
+                </div>
+                <button class="expand-btn">Click to expand details →</button>
+            </div>
+
+            <div class="subsection" onclick="toggleContent(this)">
+                <h3><div class="subsection-icon">🌍</div>International Data Transfers</h3>
+                <div class="toggle-content">
+                    <p>Nova Imperator operates globally. If you are located outside our primary jurisdiction, your information may be transferred to, stored, and processed in countries where we operate. We ensure that:</p>
+                    <ul style="margin-left: 20px;">
+                        <li>All international transfers comply with applicable data protection laws</li>
+                        <li>Adequate safeguards are in place to protect your personal data</li>
+                        <li>Recipients are bound by strict confidentiality agreements</li>
+                        <li>Regular audits ensure compliance with our privacy standards</li>
+                    </ul>
+                </div>
+                <button class="expand-btn">Click to expand details →</button>
+            </div>
+
+            <div class="subsection" onclick="toggleContent(this)">
+                <h3><div class="subsection-icon">👶</div>Children's Privacy</h3>
+                <div class="toggle-content">
+                    <p>Our calculator app is designed to be educational and safe for users of all ages, including children. We take special care to protect children's privacy:</p>
+                    <ul style="margin-left: 20px;">
+                        <li>We do not knowingly collect personal information from children under 13</li>
+                        <li>No user accounts or registration required</li>
+                        <li>All calculations are processed locally on the device</li>
+                        <li>No social features or communication capabilities</li>
+                        <li>Parental controls available for ad preferences</li>
+                    </ul>
+                </div>
+                <button class="expand-btn">Click to expand details →</button>
+            </div>
+        </section>
+
+        <!-- SOP Section -->
+        <section id="sop" class="content-section">
+            <h2 class="section-title">
+                <div class="section-icon">📋</div>
+                Standard Operating Procedures
+                <span class="update-badge">v2.1</span>
+            </h2>
+
+            <div class="highlight-box">
+                <h3>📖 Operating Guidelines</h3>
+                <p>These Standard Operating Procedures (SOP) outline the proper usage, maintenance, and troubleshooting guidelines for the Nova Imperator Digital Calculator application.</p>
+            </div>
+
+            <div class="subsection" onclick="toggleContent(this)">
+                <h3><div class="subsection-icon">🚀</div>App Installation & Setup</h3>
+                <div class="toggle-content">
+                    <h4>System Requirements:</h4>
+                    <ul style="margin-left: 20px;">
+                        <li>Android 6.0+ or iOS 12.0+</li>
+                        <li>Minimum 50MB free storage space</li>
+                        <li>Internet connection for initial download and ads</li>
+                    </ul>
+                    <h4>Installation Steps:</h4>
+                    <ol style="margin-left: 20px;">
+                        <li>Download from official app stores only</li>
+                        <li>Grant necessary permissions (storage for history)</li>
+                        <li>Complete initial setup and theme selection</li>
+                        <li>Test basic functionality with sample calculations</li>
+                    </ol>
+                </div>
+                <button class="expand-btn">Click to expand details →</button>
+            </div>
+
+            <div class="subsection" onclick="toggleContent(this)">
+                <h3><div class="subsection-icon">⚙️</div>Feature Operation Guidelines</h3>
+                <div class="toggle-content">
+                    <h4>Basic Calculator:</h4>
+                    <ul style="margin-left: 20px;">
+                        <li>Use for standard arithmetic operations (+, -, ×, ÷)</li>
+                        <li>Clear (AC) resets all calculations</li>
+                        <li>Backspace (⌫) removes last entered digit</li>
+                        <li>History automatically saves last 10 calculations</li>
+                    </ul>
+                    <h4>Scientific Calculator:</h4>
+                    <ul style="margin-left: 20px;">
+                        <li>Toggle between Radians and Degrees for trigonometric functions</li>
+                        <li>Use parentheses for complex expressions</li>
+                        <li>Scientific notation automatically applied for large/small numbers</li>
+                    </ul>
+                    <h4>Unit Converter:</h4>
+                    <ul style="margin-left: 20px;">
+                        <li>Select appropriate category (Length, Weight, etc.)</li>
+                        <li>Use swap button to quickly reverse conversion</li>
+                        <li>Results update in real-time as you type</li>
+                    </ul>
+                </div>
+                <button class="expand-btn">Click to expand details →</button>
+            </div>
+
+            <div class="subsection" onclick="toggleContent(this)">
+                <h3><div class="subsection-icon">🛠️</div>Troubleshooting Guide</h3>
+                <div class="toggle-content">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Issue</th>
+                                <th>Possible Cause</th>
+                                <th>Solution</th>
+                                <th>Prevention</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>App crashes on startup</td>
+                                <td>Insufficient memory</td>
+                                <td>Restart device, clear cache</td>
+                                <td>Regular device maintenance</td>
+                            </tr>
+                            <tr>
+                                <td>Calculations show "Error"</td>
+                                <td>Invalid operation (÷ by 0)</td>
+                                <td>Use AC to clear, re-enter</td>
+                                <td>Verify inputs before calculating</td>
+                            </tr>
+                            <tr>
+                                <td>History not saving</td>
+                                <td>Storage permission denied</td>
+                                <td>Grant storage permissions</td>
+                                <td>Check permissions during setup</td>
+                            </tr>
+                            <tr>
+                                <td>Sound not working</td>
+                                <td>Audio disabled in settings</td>
+                                <td>Enable audio in More menu</td>
+                                <td>Regular settings review</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <button class="expand-btn">Click to expand details →</button>
+            </div>
+
+            <div class="subsection" onclick="toggleContent(this)">
+                <h3><div class="subsection-icon">🔄</div>Maintenance & Updates</h3>
+                <div class="toggle-content">
+                    <h4>Regular Maintenance:</h4>
+                    <ul style="margin-left: 20px;">
+                        <li><strong>Weekly:</strong> Clear calculation history if storage is low</li>
+                        <li><strong>Monthly:</strong> Check for app updates in app store</li>
+                        <li><strong>Quarterly:</strong> Review and update preferences</li>
+                    </ul>
+                    <h4>Update Procedures:</h4>
+                    <ol style="margin-left: 20px;">
+                        <li>Enable automatic updates in app store settings</li>
+                        <li>Backup important calculations before major updates</li>
+                        <li>Test all features after update installation</li>
+                        <li>Report any issues through official support channels</li>
+                    </ol>
+                </div>
+                <button class="expand-btn">Click to expand details →</button>
+            </div>
+
+            <div class="subsection" onclick="toggleContent(this)">
+                <h3><div class="subsection-icon">🏢</div>Enterprise Usage</h3>
+                <div class="toggle-content">
+                    <h4>Business Environment Guidelines:</h4>
+                    <ul style="margin-left: 20px;">
+                        <li>Suitable for educational institutions and professional use</li>
+                        <li>No sensitive data collection makes it safe for corporate environments</li>
+                        <li>Offline functionality ensures productivity without internet</li>
+                        <li>Multiple themes accommodate different workplace preferences</li>
+                    </ul>
+                    <h4>Deployment Recommendations:</h4>
+                    <ul style="margin-left: 20px;">
+                        <li>Test on representative device models before mass deployment</li>
+                        <li>Configure standard settings for consistency</li>
+                        <li>Provide user training materials</li>
+                        <li>Establish support procedures for technical issues</li>
+                    </ul>
+                </div>
+                <button class="expand-btn">Click to expand details →</button>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="content-section">
+            <h2 class="section-title">
+                <div class="section-icon">📞</div>
+                Contact Us
+            </h2>
+
+            <div class="highlight-box">
+                <h3>💬 Get in Touch</h3>
+                <p>We're here to help! Contact our support team for any questions, feedback, or technical assistance with Nova Imperator Digital Calculator.</p>
+            </div>
+
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <div class="contact-icon">📧</div>
+                    <h3>Email Support</h3>
+                    <p>novaimperator@gmail.com</p>
+                    <p><small>Response within 24 hours</small></p>
+                </div>
+
+                <div class="contact-card">
+                    <div class="contact-icon">💬</div>
+                    <h3>Contact</h3>
+                    <p>+91 8929 023 900</p>
+                    <p><small>9:00 AM - 6:00 PM IST</small></p>
+                </div>
+
+                <div class="contact-card">
+                    <div class="contact-icon">🌐</div>
+                    <h3>Website</h3>
+                    <p>www.novaimperator.com</p>
+                    <p><small>Knowledge base & FAQs</small></p>
+                </div>
+
+                <div class="contact-card">
+                    <div class="contact-icon">📱</div>
+                    <h3>Social Media</h3>
+                    <p>@NovaImperator</p>
+                    <p><small>Updates & announcements</small></p>
+                </div>
+            </div>
+
+            <div class="subsection">
+                <h3><div class="subsection-icon">📍</div>Corporate Information</h3>
+                <p><strong>Nova Imperator Technologies</strong><br>
+                Innovation District<br>
+                Tech Hub Center<br>
+                Suite 2025<br><br>
+                <strong>Business Hours:</strong> Monday - Friday, 9:00 AM - 6:00 PM EST<br>
+                <strong>Emergency Support:</strong> Available 24/7 for critical issues</p>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="content-section">
+            <h2 class="section-title">
+                <div class="section-icon">ℹ️</div>
+                About Nova Imperator
+            </h2>
+
+            <div class="highlight-box">
+                <h3>🏆 Leading Digital Solutions</h3>
+                <p>Nova Imperator is a pioneering technology company dedicated to creating innovative digital tools that enhance productivity and learning. Our flagship Digital Calculator represents our commitment to excellence in mobile application development.</p>
+            </div>
+
+            <div class="subsection">
+                <h3><div class="subsection-icon">🎯</div>Our Mission</h3>
+                <p>To develop intuitive, powerful, and accessible digital tools that empower users to solve complex problems with confidence and ease. We believe that great technology should be simple to use while providing advanced capabilities for professional and educational needs.</p>
+            </div>
+
+            <div class="subsection">
+                <h3><div class="subsection-icon">🔬</div>Innovation & Development</h3>
+                <p>Our development team consists of experienced engineers, designers, and mathematicians who work together to create cutting-edge calculation solutions. We continuously invest in research and development to stay ahead of technological trends and user needs.</p>
+            </div>
+
+            <div class="subsection">
+                <h3><div class="subsection-icon">🌟</div>Core Values</h3>
+                <ul style="margin-left: 20px;">
+                    <li><strong>Innovation:</strong> Pushing the boundaries of what's possible in mobile calculation</li>
+                    <li><strong>Quality:</strong> Delivering reliable, accurate, and performant applications</li>
+                    <li><strong>Privacy:</strong> Protecting user data and maintaining transparency in all operations</li>
+                    <li><strong>Accessibility:</strong> Making advanced tools available to users of all skill levels</li>
+                    <li><strong>Sustainability:</strong> Creating long-lasting solutions that grow with user needs</li>
+                </ul>
+            </div>
+
+            <div class="subsection">
+                <h3><div class="subsection-icon">📊</div>Company Statistics</h3>
+                <table class="data-table">
+                    <tbody>
+                        <tr>
+                            <td><strong>Founded</strong></td>
+                            <td>2020</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Active Users</strong></td>
+                            <td>2.5M+ worldwide</td>
+                        </tr>
+                        <tr>
+                            <td><strong>App Rating</strong></td>
+                            <td>4.8/5.0 stars</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Calculations Processed</strong></td>
+                            <td>100M+ daily</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Supported Languages</strong></td>
+                            <td>25+ languages</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Countries Available</strong></td>
+                            <td>180+ countries</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- <div class="subsection">
+                <h3><div class="subsection-icon">🏅</div>Awards & Recognition</h3>
+                <ul style="margin-left: 20px;">
+                    <li><strong>2024:</strong> "Best Educational App" - Mobile Excellence Awards</li>
+                    <li><strong>2023:</strong> "Innovation in Mathematical Tools" - Tech Innovation Summit</li>
+                    <li><strong>2023:</strong> "User's Choice Award" - Digital App Awards</li>
+                    <li><strong>2022:</strong> "Outstanding Mobile Design" - UX Design Awards</li>
+                    <li><strong>2021:</strong> "Rising Star in EdTech" - Education Technology Conference</li>
+                </ul>
+            </div> -->
+        </section>
+
+        <footer class="footer">
+            <p>&copy; 2025 Nova Imperator Technologies. All rights reserved.</p>
+            <p>Digital Calculator App | Version 2.1.0 | Last Updated: January 2025</p>
+            <p><small>This privacy policy and SOP are legally binding documents. Please read carefully and contact us with any questions.</small></p>
+        </footer>
+    </div>
+
+    <script>
+        // Navigation functionality
+        function showSection(sectionId) {
+            // Hide all sections
+            const sections = document.querySelectorAll('.content-section');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+
+            // Show selected section
+            document.getElementById(sectionId).classList.add('active');
+
+            // Update button states
+            const buttons = document.querySelectorAll('.nav-btn');
+            buttons.forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+
+            // Scroll to top of content
+            document.querySelector('.container').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Toggle content functionality
+        function toggleContent(element) {
+            const toggleContent = element.querySelector('.toggle-content');
+            const expandBtn = element.querySelector('.expand-btn');
+            
+            if (toggleContent.classList.contains('expanded')) {
+                toggleContent.classList.remove('expanded');
+                expandBtn.textContent = 'Click to expand details →';
+                expandBtn.style.transform = 'translateX(0)';
+            } else {
+                toggleContent.classList.add('expanded');
+                expandBtn.textContent = 'Click to collapse details ↑';
+                expandBtn.style.transform = 'translateX(5px)';
+            }
+        }
+
+        // Create floating particles
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            const numberOfParticles = 50;
+
+            for (let i = 0; i < numberOfParticles; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 15 + 's';
+                particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
+                particlesContainer.appendChild(particle);
+            }
+        }
+
+        // Smooth scrolling for anchor links
+        document.addEventListener('DOMContentLoaded', function() {
+            createParticles();
+            
+            // Add smooth scrolling behavior
+            const links = document.querySelectorAll('a[href^="#"]');
+            links.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth' });
+                    }
+                });
+            });
+
+            // Add intersection observer for scroll animations
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animationPlayState = 'running';
+                    }
+                });
+            });
+
+            const animatedElements = document.querySelectorAll('.subsection, .contact-card');
+            animatedElements.forEach(el => observer.observe(el));
+
+            // Add click sound effect (if audio is enabled in your app)
+            document.addEventListener('click', function(e) {
+                if (e.target.classList.contains('nav-btn') || 
+                    e.target.classList.contains('expand-btn') ||
+                    e.target.closest('.subsection')) {
+                    // Add subtle click feedback
+                    e.target.style.transform = 'scale(0.98)';
+                    setTimeout(() => {
+                        e.target.style.transform = '';
+                    }, 100);
+                }
+            });
+
+            // Auto-update timestamps
+            setInterval(() => {
+                const now = new Date();
+                const timeElements = document.querySelectorAll('.timestamp');
+                timeElements.forEach(el => {
+                    el.textContent = now.toLocaleString();
+                });
+            }, 1000);
+
+            // Add keyboard navigation
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    // Close any expanded sections
+                    const expandedSections = document.querySelectorAll('.toggle-content.expanded');
+                    expandedSections.forEach(section => {
+                        section.classList.remove('expanded');
+                        const btn = section.parentElement.querySelector('.expand-btn');
+                        btn.textContent = 'Click to expand details →';
+                    });
+                }
+            });
+        });
+
+        // Add print functionality
+        function printPolicy() {
+            window.print();
+        }
+
+        // Add search functionality
+        function searchContent(query) {
+            const sections = document.querySelectorAll('.subsection');
+            const searchTerm = query.toLowerCase();
+            
+            sections.forEach(section => {
+                const text = section.textContent.toLowerCase();
+                if (text.includes(searchTerm)) {
+                    section.style.display = 'block';
+                    section.style.border = '2px solid #667eea';
+                } else {
+                    section.style.display = searchTerm === '' ? 'block' : 'none';
+                    section.style.border = '';
+                }
+            });
+        }
+
+        // Theme switching functionality (matches your app's theme system)
+        function switchTheme(themeName) {
+            const root = document.documentElement;
+            const themes = {
+                light: {
+                    '--primary-color': '#F8FAFC',
+                    '--secondary-color': '#E2E8F0',
+                    '--accent-color': '#0369A1',
+                    '--text-color': '#0F172A'
+                },
+                dark: {
+                    '--primary-color': '#0F172A',
+                    '--secondary-color': '#1E293B',
+                    '--accent-color': '#06B6D4',
+                    '--text-color': '#FFFFFF'
+                },
+                purple: {
+                    '--primary-color': '#1A0B2E',
+                    '--secondary-color': '#16213E',
+                    '--accent-color': '#8B5CF6',
+                    '--text-color': '#FFFFFF'
+                }
+            };
+
+            if (themes[themeName]) {
+                Object.entries(themes[themeName]).forEach(([property, value]) => {
+                    root.style.setProperty(property, value);
+                });
+                localStorage.setItem('selectedTheme', themeName);
+            }
+        }
+
+        // Load saved theme preference
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedTheme = localStorage.getItem('selectedTheme') || 'light';
+            switchTheme(savedTheme);
+        });
+
+        // Add dynamic year update
+        document.addEventListener('DOMContentLoaded', function() {
+            const yearElements = document.querySelectorAll('.current-year');
+            const currentYear = new Date().getFullYear();
+            yearElements.forEach(el => {
+                el.textContent = currentYear;
+            });
+        });
+    </script>
+</body>
+</html>
